@@ -129,6 +129,14 @@
   .fcol.y li:before{content:"✓";position:absolute;left:2px;color:var(--green);}
   .fcol.n li:before{content:"✕";position:absolute;left:2px;color:var(--mag);}
 
+  /* ===== the human room — deliberately unpolished ===== */
+  #humanroom .contact{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:30px;}
+  #humanroom .snap{background:#101014;border:1px solid rgba(255,255,255,.14);padding:10px 10px 12px;max-width:280px;box-shadow:0 18px 50px rgba(0,0,0,.55);border-radius:3px;}
+  #humanroom .snap:nth-child(odd){transform:rotate(-1.6deg);}
+  #humanroom .snap:nth-child(even){transform:rotate(1.4deg);}
+  #humanroom .snap:nth-child(3n){transform:rotate(-.6deg);}
+  #humanroom .snap img{width:100%;display:block;border-radius:2px;}
+  #humanroom .snap .cap{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:1.5px;color:var(--dim);text-transform:uppercase;padding-top:9px;text-align:left;}
   /* founder */
   .founder{display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap;}
   .founder .ph{flex:1;min-width:200px;aspect-ratio:1;background:var(--card);border:1px solid var(--line2);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#5a5560;font-family:'JetBrains Mono';font-size:11px;letter-spacing:1px;}
@@ -262,14 +270,15 @@
   .rowline.r1{animation-duration:38s;}
   .rowline.r2{animation-duration:46s;animation-direction:reverse;}
   .rowline.r3{animation-duration:54s;}
-  .post{width:210px;flex-shrink:0;background:#101014;border:1px solid var(--line2);border-radius:12px;overflow:hidden;}
+  .post{width:210px;flex-shrink:0;background:#101014;border:1px solid var(--line2);border-radius:14px;overflow:hidden;box-shadow:0 12px 34px rgba(0,0,0,.45);}
   .post .ptop{display:flex;align-items:center;gap:8px;padding:8px 10px;}
-  .post .pav{width:22px;height:22px;border-radius:50%;background:conic-gradient(from 210deg,#f9ce34,#ee2a7b,#6228d7,#f9ce34);}
+  .post .pav{width:22px;height:22px;border-radius:50%;background:conic-gradient(from 210deg,#f9ce34,#ee2a7b,#6228d7,#f9ce34);box-shadow:inset 0 0 0 2px #101014;}
   .post .ph2{font-size:11px;font-weight:600;color:#f4f4f6;}
   .post .media{height:120px;position:relative;display:flex;align-items:center;justify-content:center;}
-  .post .media .play{width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.45);border:1.5px solid rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;}
-  .post .views{position:absolute;bottom:6px;left:8px;font-family:'JetBrains Mono';font-size:10px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.8);}
-  .post .acts{display:flex;gap:12px;padding:8px 10px;font-size:11px;color:#cfcfd6;}
+  .post .media:after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.09),transparent 45%),radial-gradient(ellipse at 70% 100%,rgba(0,0,0,.35),transparent 60%);pointer-events:none;}
+  .post .media .play{width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);border:1.5px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;z-index:1;}
+  .post .views{position:absolute;bottom:7px;left:8px;font-family:'JetBrains Mono';font-size:9.5px;color:#fff;background:rgba(0,0,0,.55);padding:2px 8px;border-radius:20px;z-index:1;}
+  .post .acts{display:flex;gap:12px;padding:9px 12px;font-size:11px;color:#e2e2ea;border-top:1px solid rgba(255,255,255,.05);}
   .post .acts span{display:flex;align-items:center;gap:4px;}
   .m1{background:linear-gradient(135deg,#1b2735,#2c3e50);}
   .m2{background:linear-gradient(135deg,#2b1b3a,#41295a);}
@@ -316,6 +325,16 @@
   .combined{font-family:'Michroma';font-size:clamp(26px,5vw,44px);letter-spacing:.1em;margin-top:26px;
     background:linear-gradient(100deg,#8cbeff,#be8cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
   footer{padding:36px 0 100px;text-align:center;font-family:'JetBrains Mono';font-size:10.5px;color:#5a5560;letter-spacing:1.5px;line-height:2;position:relative;z-index:2;}
+  .slash{display:flex;align-items:baseline;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:26px;font-family:'Michroma';}
+  .slash s{font-size:clamp(18px,2.8vw,28px);color:var(--faint);}
+  .slash .ar{color:var(--blue);font-size:clamp(18px,2.8vw,26px);}
+  .slash b{font-size:clamp(30px,5vw,46px);background:linear-gradient(100deg,#8cbeff,#be8cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .slash .save{font-family:'JetBrains Mono';font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--orange);border:1px solid rgba(255,154,52,.4);border-radius:20px;padding:6px 14px;align-self:center;}
+  .sticky .sprice{font-family:'Michroma';font-size:14px;}
+  .sticky .sprice s{color:var(--faint);font-size:11px;}
+  .sticky .sprice b{background:linear-gradient(100deg,#8cbeff,#be8cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .stimer{font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:1px;color:var(--blue);border:1px solid rgba(140,190,255,.3);border-radius:6px;padding:4px 10px;}
+  @media(max-width:640px){.stimer{display:none;}}
   .sticky{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(12,12,17,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(140,190,255,.25);color:var(--ink);display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 14px;font-size:13px;font-weight:600;transform:translateY(120%);transition:transform .35s;flex-wrap:wrap;}
   .sticky.show{transform:none;}
   .sticky a{background:#f4f4f6;color:#07070a;text-decoration:none;padding:9px 20px;font-weight:700;border-radius:6px;font-size:13px;cursor:pointer;}
@@ -452,56 +471,56 @@
     <div class="phase">
       <div class="top"><span class="wk">Week 1 · Foundation</span><h3>The offer &amp; the operator</h3></div>
       <ul>
-        <li>The AI-native business model, and the economics of one operator plus AI</li>
-        <li>Pick and sharpen your offer, your buyer, and your promise</li>
-        <li>Operator mindset: energy, focus, and why volume beats perfection</li>
+        <li>You will lock in the AI-native business model, and the economics of one operator plus AI</li>
+        <li>You will pick and sharpen your offer, your buyer, and your promise</li>
+        <li>You will build the operator mindset: energy, focus, and why volume beats perfection</li>
       </ul>
       <div class="ship">You ship: your offer, written and public.</div>
     </div>
     <div class="phase">
       <div class="top"><span class="wk">Week 2 · Distribution</span><h3>The personal brand engine</h3></div>
       <ul>
-        <li>Positioning and the pin architecture that makes strangers follow</li>
-        <li>The content formats that built billions of views: hooks, story, open loops</li>
-        <li>Record once, distribute everywhere: the repurposing system</li>
-        <li>The yap, engineered: talking to camera is the fastest trust-builder on the internet, because the brain reads unscripted speech as honesty. We train the reps, the hooks, and the delivery until you hold attention effortlessly, even if all you want to be is a world-class yapper</li>
-        <li>Never want to be on camera? Fine. Our agentic faceless content strategies run the machine without your face. The brand is the system, not one person, and we have built more than one way to feed it</li>
+        <li>You will nail the positioning and pin architecture that makes strangers follow</li>
+        <li>You will master the content formats that built billions of views: hooks, story, open loops</li>
+        <li>You will record once and distribute everywhere with the repurposing system</li>
+        <li>You will master the yap, engineered: talking to camera is the fastest trust-builder on the internet, because the brain reads unscripted speech as honesty. We train the reps, the hooks, and the delivery until you hold attention effortlessly, even if all you want to be is a world-class yapper</li>
+        <li>Never want to be on camera? Fine. You will deploy our agentic faceless content strategies and run the machine without your face. The brand is the system, not one person, and we have built more than one way to feed it</li>
       </ul>
       <div class="ship">You ship: profile rebuilt + your first content live.</div>
     </div>
     <div class="phase">
       <div class="top"><span class="wk">Week 3 · The Agentic AI Machine</span><h3>AI-native systems &amp; agents</h3></div>
       <ul>
-        <li>The content factory: research, script, edit, and repurpose with AI</li>
-        <li>Automations and agents that run lead capture and follow-up without you</li>
-        <li>The stack that makes one person run like a team of five</li>
+        <li>You will assemble your content factory: research, script, edit, and repurpose with AI</li>
+        <li>You will switch on automations and agents that run lead capture and follow-up without you</li>
+        <li>You will command the stack that makes one person run like a team of five</li>
       </ul>
       <div class="ship">You ship: one working automation + your content engine running.</div>
     </div>
     <div class="phase">
       <div class="top"><span class="wk">Week 4 · Autonomous Acquisition</span><h3>The pipeline</h3></div>
       <ul>
-        <li>Inbound from content, outbound that does not feel gross, DM-to-call</li>
-        <li>AI search and GEO: getting found inside ChatGPT, Perplexity, and AI answers</li>
-        <li>CRM discipline: every conversation tracked, every follow-up automated</li>
+        <li>You will turn content into inbound, run outbound that does not feel gross, and take DMs to booked calls</li>
+        <li>You will get found inside ChatGPT, Perplexity, and AI answers with AI search and GEO</li>
+        <li>You will install CRM discipline: every conversation tracked, every follow-up automated</li>
       </ul>
       <div class="ship">You ship: 10 real conversations started, tracked.</div>
     </div>
     <div class="phase">
       <div class="top"><span class="wk">Week 5 · The Close</span><h3>Sales &amp; conversion</h3></div>
       <ul>
-        <li>The audit-style call: diagnose, map, prescribe. Never pitch</li>
-        <li>Objection handling, pricing confidence, collecting payment</li>
-        <li>Turning attention into money without a sales team, yet</li>
+        <li>You will run the audit-style call: diagnose, map, prescribe. Never pitch</li>
+        <li>You will master objection handling, pricing confidence, and collecting payment</li>
+        <li>You will turn attention into money without a sales team, yet</li>
       </ul>
       <div class="ship">You ship: your first close, or 3 booked calls.</div>
     </div>
     <div class="phase">
       <div class="top"><span class="wk">Week 6 · Advanced Scale Systems</span><h3>The scale plan</h3></div>
       <ul>
-        <li>Paid acquisition basics and the self-liquidating model</li>
-        <li>When to hire, what to delegate, and what breaks at each level</li>
-        <li>Your 90-day roadmap to a machine that compounds without you</li>
+        <li>You will run paid acquisition and the self-liquidating funnel model</li>
+        <li>You will know when to hire, what to delegate, and what breaks at each level</li>
+        <li>You will leave with your 90-day roadmap to a machine that compounds without you</li>
       </ul>
       <div class="ship">You ship: your 90-day scale plan. Graduation.</div>
     </div>
@@ -656,12 +675,8 @@
     <div class="center"><div class="combined">3M+ FOLLOWERS</div>
     <p class="lead center" style="margin-top:8px;">across nine creator and media accounts whose monetisation systems and business strategy we built and advised.</p></div>
     <div class="slot">[ SLOT · Add graduate before/after screenshots here after cohort 1 ]</div>
-  </div>
-</section>
 
-<!-- VALUE / PRICE -->
-<section id="price">
-  <div class="wrap">
+    <div id="price"></div>
     <div class="kick center" style="text-align:center;">// the numbers</div>
     <h2 class="center">what it's <em>worth.</em></h2>
     <div class="stack">
@@ -677,6 +692,7 @@
       <div class="r tot"><span class="d">Total value</span><span class="val">$5,476</span></div>
     </div>
     <p class="lead center" style="margin-top:18px;">Founding cohort pricing. The private-client version of this system starts at $15,000.</p>
+    <div class="slash"><s>$1,997</s><span class="ar">→</span><b>$297</b><span class="save">save $1,700 · founding cohort only</span></div>
     <div class="pricecards" id="priceCards">
       <div class="pc best"><div class="amt">$297</div><div class="lbl">pay in full</div><a class="cta ctaBuy" data-plan="full" style="margin-top:0;">Get in</a></div>
       <div class="pc"><div class="amt">$167<small>×2</small></div><div class="lbl">split pay</div><a class="cta ctaBuy" data-plan="split" style="margin-top:0;background:transparent;border:1px solid rgba(190,140,255,.5);color:var(--lav);box-shadow:none;">Split it</a></div>
@@ -709,6 +725,22 @@
 </section>
 
 <!-- FOUNDER -->
+<section id="humanroom" style="display:none;">
+  <div class="wrap">
+    <div class="kick" style="text-align:center;">// no filter</div>
+    <h2 class="center">the machines are alien.<br><em>the people are not.</em></h2>
+    <p class="lead center">Bad lighting, real rooms, real cohort calls. This is what building the machine actually looks like from the inside.</p>
+    <div class="contact">
+      <div class="snap"><img src="proof/room-1.jpg" alt="" onerror="this.parentNode.style.display='none'"><div class="cap">cohort call · building live</div></div>
+      <div class="snap"><img src="proof/room-2.jpg" alt="" onerror="this.parentNode.style.display='none'"><div class="cap">with timon · working session</div></div>
+      <div class="snap"><img src="proof/room-3.jpg" alt="" onerror="this.parentNode.style.display='none'"><div class="cap">coaching · systems review</div></div>
+      <div class="snap"><img src="proof/room-4.jpg" alt="" onerror="this.parentNode.style.display='none'"><div class="cap">mentorship · in the room</div></div>
+      <div class="snap"><img src="proof/room-5.jpg" alt="" onerror="this.parentNode.style.display='none'"><div class="cap">feedback loop · live</div></div>
+      <div class="snap"><img src="proof/room-6.jpg" alt="" onerror="this.parentNode.style.display='none'"><div class="cap">the build · unfiltered</div></div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap founder">
     <div class="ph" style="overflow:hidden;padding:0;"><img src="avatars/jeanjacques.png" alt="Jean Jacques Janse van Rensburg" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
@@ -779,7 +811,9 @@
 </footer>
 
 <div class="sticky" id="sticky">
+  <span class="sprice"><s>$1,997</s> <b>$297</b></span>
   <span id="stickyText">The Content Factory Protocol · founding cohort</span>
+  <span class="stimer" id="stickyTimer">--d : --h : --m : --s</span>
   <a class="ctaMain">Build my factory →</a>
 </div>
 
@@ -810,9 +844,13 @@ document.getElementById('tickIn').innerHTML = (isCart
 document.querySelectorAll('.ctaMain').forEach(a=>{ a.href = isCart ? "#price" : WAITLIST_URL; });
 document.querySelectorAll('.ctaBuy').forEach(a=>{ a.href = isCart ? (a.dataset.plan==='split'?SPLIT_URL:CHECKOUT_URL) : WAITLIST_URL; if(!isCart) a.textContent="Join the registry"; });
 document.querySelector('.sticky a').href = isCart ? "#price" : WAITLIST_URL;
-document.getElementById('stickyText').textContent = isCart ? "The Content Factory Protocol · doors close Sep 16" : "Registry open · first access + founding pricing";
+document.getElementById('stickyText').textContent = isCart ? "Doors close · founding pricing ends" : "Registry open · founding pricing locked in";
 
 window.addEventListener('scroll',()=>{document.getElementById('sticky').classList.toggle('show',window.scrollY>900);});
+const _tgt=new Date(isCart?DOORS_CLOSE:CART_OPEN),_pad=n=>String(Math.max(0,Math.floor(n))).padStart(2,'0');
+function _tick(){let d=Math.max(0,_tgt-Date.now());const el=document.getElementById('stickyTimer');
+if(el)el.textContent=_pad(d/864e5)+'d : '+_pad(d/36e5%24)+'h : '+_pad(d/6e4%60)+'m : '+_pad(d/1e3%60)+'s';}
+_tick();setInterval(_tick,1000);
 
 /* aurora wave */
 (function(){
