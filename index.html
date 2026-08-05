@@ -165,6 +165,43 @@
   section.lit .phase:before,section.lit .card:before,section.lit .bonus:before{content:"";position:absolute;top:0;left:-80%;width:60%;height:100%;transform:skewX(-20deg);
     background:linear-gradient(90deg,transparent,rgba(203,182,255,.06),transparent);animation:shine 1.6s ease .3s forwards;pointer-events:none;}
   @keyframes shine{to{left:130%;}}
+  /* ===== money-first result cards ===== */
+  .resgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:28px;}
+  .res{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:22px;text-align:left;}
+  .res.flag{border-color:rgba(190,140,255,.45);box-shadow:0 0 40px rgba(190,140,255,.12);grid-column:1/-1;}
+  .res .cat{font-family:'JetBrains Mono';font-size:9px;letter-spacing:2px;color:var(--blue);text-transform:uppercase;border:1px solid rgba(140,190,255,.3);border-radius:12px;padding:3px 9px;display:inline-block;}
+  .res .nm2{font-weight:800;font-size:16px;margin-top:10px;}
+  .res .money{font-family:'Michroma';font-size:clamp(17px,2.2vw,22px);margin:8px 0 6px;letter-spacing:.02em;line-height:1.3;
+    background:linear-gradient(100deg,#8cbeff,#be8cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .res p{font-size:12.5px;color:var(--dim);line-height:1.55;}
+  /* ===== follower chip (vanity metric on sight) ===== */
+  .igchip{display:inline-flex;align-items:center;gap:7px;margin-top:12px;text-decoration:none;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.5px;color:var(--dim);border:1px solid var(--line2);border-radius:20px;padding:6px 13px;background:rgba(12,12,17,.7);transition:border-color .2s,color .2s;}
+  .igchip:hover{border-color:var(--blue);color:var(--ink);}
+  .igchip b{color:var(--ink);font-weight:700;}
+  .igchip .igdot{width:7px;height:7px;border-radius:50%;background:conic-gradient(from 210deg,#8cbeff,#be8cff,#8cbeff);}
+  /* ===== flagship case: live-site browser frame ===== */
+  .flagsplit{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;align-items:center;margin-top:14px;}
+  @media(max-width:760px){.flagsplit{grid-template-columns:1fr;}}
+  .browser{display:block;text-decoration:none;border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:#0c0c11;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 50px rgba(140,190,255,.08);transition:transform .25s ease,box-shadow .25s ease;}
+  .browser:hover{transform:translateY(-5px);box-shadow:0 40px 90px rgba(0,0,0,.7),0 0 70px rgba(140,190,255,.16);}
+  .browser .bar{display:flex;align-items:center;gap:8px;padding:9px 12px;background:#101016;border-bottom:1px solid var(--line);}
+  .browser .dot{width:9px;height:9px;border-radius:50%;}
+  .browser .url{flex:1;font-family:'JetBrains Mono';font-size:10px;color:var(--dim);background:#07070a;border:1px solid var(--line);border-radius:6px;padding:4px 10px;letter-spacing:.5px;}
+  .browser img{width:100%;display:block;}
+  .browser .visit{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:2px;color:var(--blue);text-transform:uppercase;text-align:center;padding:9px;background:#101016;border-top:1px solid var(--line);}
+  /* ===== viral receipts phone gallery ===== */
+  .phones{display:flex;gap:20px;justify-content:center;align-items:flex-start;flex-wrap:wrap;margin-top:30px;}
+  .phone{display:block;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease;width:min(240px,80vw);border-radius:30px;border:1.5px solid var(--line2);background:#000;padding:8px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 40px rgba(140,190,255,.08);position:relative;}
+  .phone:before{content:"";position:absolute;top:14px;left:50%;transform:translateX(-50%);width:70px;height:16px;background:#000;border-radius:10px;z-index:2;}
+  .phone img{width:100%;border-radius:22px;display:block;}
+  a.phone:hover{transform:translateY(-6px);box-shadow:0 40px 90px rgba(0,0,0,.7),0 0 60px rgba(140,190,255,.18);}
+  .phone .cap{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:1px;color:var(--dim);text-transform:uppercase;text-align:center;padding:10px 4px 4px;}
+  .msgcard{max-width:420px;border-radius:16px;border:1px solid var(--line2);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);}
+  .msgcard img{width:100%;display:block;}
+  .viralstat{display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:24px;font-family:'Michroma';}
+  .viralstat div{text-align:center;}
+  .viralstat b{display:block;font-size:clamp(20px,3.4vw,32px);background:linear-gradient(100deg,#8cbeff,#be8cff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+  .viralstat span{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:2px;color:var(--dim);text-transform:uppercase;}
   /* ===== faces strip ===== */
   .faces{display:flex;justify-content:center;align-items:center;margin:26px auto 0;flex-wrap:wrap;gap:0;}
   .faces a{display:block;width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid #0c0c11;margin-left:-10px;box-shadow:0 0 0 1.5px rgba(140,190,255,.35);transition:transform .15s;}
@@ -310,9 +347,10 @@
       <a href="https://www.instagram.com/tayne_devilliers/" target="_blank"><img src="avatars/tayne.jpg" alt="Tayne De Villiers"></a>
       <a href="https://www.instagram.com/iamsimoneestelle/" target="_blank"><img src="avatars/simone.jpg" alt="Simone Estelle"></a>
       <a href="#" title="Jandre de Beer"><img src="avatars/jandre.jpg" alt="Jandre de Beer"></a>
-      <a href="#" title="Edgars"><img src="avatars/edgars.jpg" alt="Edgars"></a>
-      <a href="#" title="Buntu Majaja"><span class="init">BM</span></a>
+      <a href="https://www.instagram.com/edgars_podnieks/" target="_blank" title="Edgars Podnieks"><img src="avatars/edgars.jpg" alt="Edgars Podnieks"></a>
+      <a href="#" title="Buntu Majaja"><img src="avatars/buntu.jpg" alt="Buntu Majaja"></a>
       <a href="#" title="Dean White"><span class="init">DW</span></a>
+      <a href="https://www.instagram.com/amandaancheta_/" target="_blank" title="Amanda Ancheta"><img src="avatars/amanda.jpg" alt="Amanda Ancheta"></a>
       <a href="https://www.instagram.com/growthwithb/" target="_blank"><img src="avatars/brandon.jpg" alt="Brandon Kour"></a>
       <a href="https://www.instagram.com/viraldowntown/" target="_blank"><img src="avatars/viraldowntown.jpg" alt="Viral Downtown"></a>
       <a href="https://www.instagram.com/ttd_athletics/" target="_blank"><img src="avatars/ttd.jpg" alt="TTD Athletics"></a>
@@ -426,11 +464,13 @@
         <li>Positioning and the pin architecture that makes strangers follow</li>
         <li>The content formats that built billions of views: hooks, story, open loops</li>
         <li>Record once, distribute everywhere: the repurposing system</li>
+        <li>The yap, engineered: talking to camera is the fastest trust-builder on the internet, because the brain reads unscripted speech as honesty. We train the reps, the hooks, and the delivery until you hold attention effortlessly, even if all you want to be is a world-class yapper</li>
+        <li>Never want to be on camera? Fine. Our agentic faceless content strategies run the machine without your face. The brand is the system, not one person, and we have built more than one way to feed it</li>
       </ul>
       <div class="ship">You ship: profile rebuilt + your first content live.</div>
     </div>
     <div class="phase">
-      <div class="top"><span class="wk">Week 3 · The Machine</span><h3>AI-native systems &amp; agents</h3></div>
+      <div class="top"><span class="wk">Week 3 · The Agentic AI Machine</span><h3>AI-native systems &amp; agents</h3></div>
       <ul>
         <li>The content factory: research, script, edit, and repurpose with AI</li>
         <li>Automations and agents that run lead capture and follow-up without you</li>
@@ -439,7 +479,7 @@
       <div class="ship">You ship: one working automation + your content engine running.</div>
     </div>
     <div class="phase">
-      <div class="top"><span class="wk">Week 4 · Acquisition</span><h3>The pipeline</h3></div>
+      <div class="top"><span class="wk">Week 4 · Autonomous Acquisition</span><h3>The pipeline</h3></div>
       <ul>
         <li>Inbound from content, outbound that does not feel gross, DM-to-call</li>
         <li>AI search and GEO: getting found inside ChatGPT, Perplexity, and AI answers</li>
@@ -457,7 +497,7 @@
       <div class="ship">You ship: your first close, or 3 booked calls.</div>
     </div>
     <div class="phase">
-      <div class="top"><span class="wk">Week 6 · Scale</span><h3>The scale plan</h3></div>
+      <div class="top"><span class="wk">Week 6 · Advanced Scale Systems</span><h3>The scale plan</h3></div>
       <ul>
         <li>Paid acquisition basics and the self-liquidating model</li>
         <li>When to hire, what to delegate, and what breaks at each level</li>
@@ -490,76 +530,92 @@
     <div class="kick center" style="text-align:center;">// receipts</div>
     <h2 class="center">this is not <em>new.</em></h2>
     <p class="lead center">The protocol is the packaged version of systems we have already run, at every level, for years.</p>
-    <div class="pcard">
-      <div class="head"><div><div class="who">Timon Kriek</div><div class="role">Founder &amp; Creator · GIIFTD</div></div><div class="metric">0 → 1.4M+ followers</div></div>
-      <div class="ba"><div class="b"><div class="lab">Before</div>Posting manually. Inconsistent monetisation. Audience growing, no path to revenue.</div><div class="arr">→</div><div class="a"><div class="lab">After</div>Full content-to-revenue engine, running without him on camera every day.</div></div>
-    </div>
-    <div style="max-width:760px;margin:26px auto;text-align:left;background:var(--card);border-left:3px solid rgba(140,190,255,.6);border-radius:0 12px 12px 0;padding:24px 28px;">
-      <p class="lead" style="margin:0 0 12px;"><b class="hl">Here is the part almost everyone gets wrong: content alone does not equal revenue.</b></p>
-      <p class="lead" style="margin:0 0 12px;">Attention is the easy half. We have watched operators with hundreds of thousands of followers earn less than accounts a tenth their size, because nothing behind the content was built to convert. What turns an audience into income is the layer underneath: the offer, the funnel, the backend, running as <b class="vio">agentic monetisation systems</b>, automations and agents that capture, nurture, and close while the content does the reaching.</p>
-      <p class="lead" style="margin:0;">And the content side runs the same way: <b class="vio">agentic content systems</b>. The factory runs in its own loops, agents research, script, cut, and queue, so it cooks up content on its own. You do not grind the machine. You learn to fly it.</p>
+    <div class="resgrid">
+      <div class="res flag"><span class="cat">Medical · Aesthetics · Florida USA</span>
+        <div class="flagsplit">
+          <div>
+            <div class="nm2">Dr Kat Kesty, MD · St. Petersburg Skin &amp; Laser</div>
+            <div class="money">~$1.3M → ~$2.3M ARR · doubled in 24 months</div>
+            <p>The protocol applied to her personal brand, content, VSL, and the systems behind the practice. Healthy month-over-month growth, a second fellowship-trained doctor added (Dr Chelsea Kesty), both fully booked today.</p>
+            <p style="margin-top:10px;">This one you can verify yourself. The VSL and consultation engine we designed still run on their site right now. That is the practice, that is the team, that is the machine, live in production.</p>
+          </div>
+          <a class="browser" href="https://www.stpeteskinandlaser.com/" target="_blank" rel="noopener">
+            <div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="url">stpeteskinandlaser.com</span></div>
+            <img src="proof/spsl-hero.jpg" alt="St. Petersburg Skin &amp; Laser — Dr Kat Kesty and Dr Chelsea Kesty, live site" loading="lazy">
+            <div class="visit">Visit the live site ↗</div>
+          </a>
+        </div>
+      </div>
+      <div class="res"><span class="cat">Creator · Education</span>
+        <div class="nm2">Timon Kriek · GIIFTD</div>
+        <div class="money">1.4M+ on Instagram · ~3M across platforms</div>
+        <p>We built the monetisation systems behind the audience: the engine that turned billions of views into predictable revenue, running without him on camera every day.</p>
+        <a class="igchip" href="https://www.instagram.com/timon.kriek/" target="_blank" rel="noopener"><span class="igdot"></span>@timon.kriek · <b>1M followers</b> ↗</a></div>
+      <div class="res"><span class="cat">Education · Info Business</span>
+        <div class="nm2">Gifted Academy</div>
+        <div class="money">$0 → $40k MRR in under 4 months</div>
+        <p>Offer, funnel, and content engine productised from zero to recurring revenue in one quarter.</p></div>
+      <div class="res"><span class="cat">Finance · European Investment Operator</span>
+        <div class="nm2">Edgars Podnieks</div>
+        <div class="money">Engineered reels · 128K shares on one alone</div>
+        <p>Founder &amp; CEO of an industrial investment company operating across Dubai and Central Asia. We engineer investment-space reels with him again and again, not once. The facility reel alone pulled 91.2K likes and 128,000 shares, reach engineered far beyond the size of the account. That is distribution as a system, not luck.</p>
+        <a class="igchip" href="https://www.instagram.com/edgars_podnieks/" target="_blank" rel="noopener"><span class="igdot"></span>@edgars_podnieks ✓ ↗</a></div>
+      <div class="res"><span class="cat">Media · Agency</span>
+        <div class="nm2">Jandre de Beer · V8 Media</div>
+        <div class="money">Record month in sales · under 30 days</div>
+        <p>Sales systems installed and tuned. The record month landed inside the first 30 days of working together.</p></div>
+      <div class="res"><span class="cat">Tech · Ecosystem Builder</span>
+        <div class="nm2">Buntu Majaja · SA Innovation Summit</div>
+        <div class="money">Record month in sales · under 2 months</div>
+        <p>Founder of one of Africa's leading innovation platforms and a tech &amp; AI thought leader. Systems and strategy work produced a record sales month within two months.</p></div>
+      <div class="res"><span class="cat">Agency · Multi-Company Operator</span>
+        <div class="nm2">Dean White · King Contractors</div>
+        <div class="money">$100k+ in sales unlocked</div>
+        <p>Systems-based work and strategic advisory across his companies, not just one, that helped Dean close over $100k in sales.</p></div>
+      <div class="res"><span class="cat">Fitness · Creator · 577K</span>
+        <div class="nm2">Blaine Riley</div>
+        <div class="money">Monetisation built to match the growth</div>
+        <p>An account growing faster than its money systems. We structured the offer, funnel, and backend so revenue finally moved at the speed of the audience.</p>
+        <a class="igchip" href="https://www.instagram.com/blainerileylifts/" target="_blank" rel="noopener"><span class="igdot"></span>@blainerileylifts · <b>577K followers</b> ↗</a></div>
+      <div class="res"><span class="cat">Fitness · Celebrity Trainer</span>
+        <div class="nm2">Simone Estelle</div>
+        <div class="money">Systems + monetisation behind the brand</div>
+        <p>Celebrity fitness trainer. We built and advised the monetisation systems and business strategy behind the brand.</p>
+        <a class="igchip" href="https://www.instagram.com/iamsimoneestelle/" target="_blank" rel="noopener"><span class="igdot"></span>@iamsimoneestelle · <b>67K followers</b> ↗</a></div>
+      <div class="res"><span class="cat">Venture Capital</span>
+        <div class="nm2">Anas Ben Meidoub · Ryad VC</div>
+        <div class="money">2x international revenue potential · 4 months</div>
+        <p>Data-driven expansion strategy: three emerging markets identified, key partnerships secured inside four months.</p></div>
+      <div class="res"><span class="cat">Creator · Women’s Transformation</span>
+        <div class="nm2">Amanda Ancheta · SHE RISES</div>
+        <div class="money">37K followers · monetisation engine in build</div>
+        <p>Helps women break self-sabotage and rebuild into their strongest self. We work the systems and monetisation side as the audience compounds, the SHE RISES brand, productised.</p>
+        <a class="igchip" href="https://www.instagram.com/amandaancheta_/" target="_blank" rel="noopener"><span class="igdot"></span>@amandaancheta_ · <b>37K followers</b> ↗</a></div>
     </div>
 
-    <div class="revgrid">
-      <div class="revcard">
-        <div class="t">The attention</div>
-        <div class="big"><span data-count="1400000" data-fmt="m">0</span></div>
-        <div class="s">followers built on one brand · billions of views generated</div>
-      </div>
-      <div class="revarrow">→</div>
-      <div class="revcard">
-        <div class="t">The revenue · Gifted Academy backend</div>
-        <div class="big money">$<span data-count="40000" data-fmt="k">0</span>/mo</div>
-        <div class="s">from $0, in under 4 months, once the monetisation systems went in</div>
-        <div class="bars2"><i style="height:12%"></i><i style="height:22%"></i><i style="height:38%"></i><i style="height:57%"></i><i style="height:78%"></i><i style="height:100%"></i></div>
-      </div>
+    <!-- VIRAL RECEIPTS · fresh from the field -->
+    <div class="kick" style="text-align:center;margin-top:48px;">// fresh receipts · straight from the field</div>
+    <h2 class="center">this happened <em>last week.</em></h2>
+    <p class="lead center">Content engineered with Edgars Podnieks, European investment operator, one of the reels we have engineered with him in the investment space. Real screenshots, real account, real numbers. We do this on repeat; this one is just the loudest.</p>
+    <div class="phones">
+      <a class="phone" href="https://www.instagram.com/reel/DSozzlPjEFu/" target="_blank" rel="noopener"><img src="proof/edgars-reel-1.png" alt="Viral reel — 91.2K likes, 128K shares"><div class="cap">The reel · tap to watch ↗</div></a>
+      <a class="phone" href="https://www.instagram.com/reel/DSozzlPjEFu/" target="_blank" rel="noopener"><img src="proof/edgars-reel-2.png" alt="Viral reel — Kazakhstan facility"><div class="cap">128K shares · live on IG ↗</div></a>
+      <a class="phone" href="https://www.instagram.com/reel/DbYY5IDqkIb/" target="_blank" rel="noopener"><img src="proof/edgars-reel-3.png" alt="Follow-up reel"><div class="cap">The follow-up ↗</div></a>
     </div>
-    <p class="lead center" style="margin-top:18px;">Same audience. Same content. The difference between the left card and the right card is the machine we build in week 1 to 6.</p>
-    <div class="pcard">
-      <div class="head"><div><div class="who">Gifted Academy</div><div class="role">Education · Personal Brand</div></div><div class="metric">$0 → $40k MRR in under 4 months</div></div>
-      <div class="ba"><div class="b"><div class="lab">Before</div>An expert with knowledge and no machine to sell it at scale.</div><div class="arr">→</div><div class="a"><div class="lab">After</div>A productised offer, funnel, and content engine, to $40k monthly recurring in under four months.</div></div>
+    <div class="viralstat">
+      <div><b>91.2K</b><span>likes</span></div>
+      <div><b>2,096</b><span>comments</span></div>
+      <div><b>128K</b><span>shares</span></div>
     </div>
-    <div class="pcard">
-      <div class="head"><div><div class="who">Anas Ben Meidoub</div><div class="role">Partner · Ryad VC</div></div><div class="metric">2x international revenue potential in 4 months</div></div>
-      <div class="ba"><div class="b"><div class="lab">Before</div>Scaling across geographies with no systematic expansion approach.</div><div class="arr">→</div><div class="a"><div class="lab">After</div>Data-driven expansion, three markets identified, partnerships secured in four months.</div></div>
+    <div class="phones" style="margin-top:26px;">
+      <div class="msgcard"><img src="proof/client-message.jpg" alt="Client message: that video went viral"></div>
     </div>
-    <div class="pcard">
-      <div class="head"><div><div class="who">Blaine Riley</div><div class="role">Fitness Creator · 577K followers</div></div><div class="metric">Monetisation systems built to match a fast-growing account</div></div>
-      <div class="ba"><div class="b"><div class="lab">Before</div>Growing fast on Instagram, but the money side could not keep up: no structured offers, no funnel, no systems moving at the speed of the account.</div><div class="arr">→</div><div class="a"><div class="lab">After</div>Monetisation architecture structured behind the growth: offer, funnel, and backend systems that finally moved with the audience instead of trailing it.</div></div>
-    </div>
-    <div class="pcard">
-      <div class="head"><div><div class="who">Jandre de Beer</div><div class="role">Founder · V8 Media</div></div><div class="metric">Record month in sales, in under 30 days</div></div>
-      <div class="ba"><div class="b"><div class="lab">Before</div>A growing media business without a structured sales system behind it.</div><div class="arr">→</div><div class="a"><div class="lab">After</div>Sales systems installed and tuned. Result: a record month in sales in less than 30 days of working together.</div></div>
-    </div>
-    <div class="pcard">
-      <div class="head"><div><div class="who">Buntu Majaja</div><div class="role">Founder · SA Innovation Summit · Tech &amp; AI thought leader</div></div><div class="metric">Record month in sales, in under 2 months</div></div>
-      <div class="ba"><div class="b"><div class="lab">Before</div>A leading tech ecosystem builder whose commercial engine had room to match his platform.</div><div class="arr">→</div><div class="a"><div class="lab">After</div>Systems and strategy work that produced a record sales month within two months of starting.</div></div>
-    </div>
-    <div class="pcard">
-      <div class="head"><div><div class="who">Dean White</div><div class="role">King Contractors Agency · Multi-company operator</div></div><div class="metric">$100k+ in sales unlocked across his companies</div></div>
-      <div class="ba"><div class="b"><div class="lab">Before</div>Multiple companies, growth capped by systems, not by demand.</div><div class="arr">→</div><div class="a"><div class="lab">After</div>Systems-based work and strategic advisory that helped Dean close over $100k in sales across his companies, not just one.</div></div>
-    </div>
-    <div class="pcard" style="border-color:rgba(190,140,255,.45);box-shadow:0 0 40px rgba(190,140,255,.12);">
-      <div class="head"><div><div class="who">Dr Kat Kesty, MD</div><div class="role">St. Petersburg Skin &amp; Laser · Florida</div></div><div class="metric">~$1.3M → ~$2.3M ARR · roughly doubled in 24 months</div></div>
-      <div class="ba">
-        <div class="b"><div class="lab">Before</div>A world-class laser dermatologist (fellowship-trained, one of a handful in the US) doing ~$1.3M a year, with a brand and digital machine that did not yet match her calibre.</div>
-        <div class="arr">→</div>
-        <div class="a"><div class="lab">After</div>We applied the protocol: her personal brand, content, VSL, and the systems behind the practice. Revenue grew healthy month over month to ~$2.3M ARR, and the practice added a second doctor, Dr Chelsea Kesty. Both are fully booked today.</div>
-      </div>
-      <p style="font-size:12.5px;color:#9a9aa4;margin-top:14px;border-top:1px solid rgba(255,255,255,.08);padding-top:12px;line-height:1.6;">We do not publish what we built. You can watch it working instead: the VSL, the consultation engine, and the authority machine we designed still run on <a href="https://www.stpeteskinandlaser.com/" target="_blank" style="color:#cdb4ff;">stpeteskinandlaser.com</a> today, now backed by a media wall spanning Dermatology Times, TechTimes, and national podcasts. A doctors-only practice with Florida's largest laser arsenal and two fully-booked physicians conservatively runs well beyond those numbers now (our estimate from public information, not their disclosure).</p>
-    </div>
-    <div class="kick" style="text-align:center;margin-top:40px;">// receipts from the journey</div>
-    <p class="lead center">Real screenshots from inside the builds. Follower jumps, revenue days, the DMs. No stock, no mockups.</p>
-    <div class="shotgrid">
-      <div class="shot">[ SCREENSHOT SLOT · follower growth graph — before → after ]</div>
-      <div class="shot">[ SCREENSHOT SLOT · revenue / Stripe day — the money ]</div>
-      <div class="shot">[ SCREENSHOT SLOT · viral post analytics — views + shares ]</div>
-      <div class="shot">[ SCREENSHOT SLOT · client DM / testimonial — the moment it clicked ]</div>
-    </div>
+    <p class="lead center" style="margin-top:14px;font-size:13px;color:var(--dim);">The message that followed. This is what working with us looks like in your inbox.</p>
 
     <div class="roster">
-      <span>Huawei</span><span>BYD</span><span>G20</span><span>World Economic Forum</span><span>Wamly.io</span><span>OreFlo.ai</span><span>Baltyn Invest</span><span>V8 Media</span><span>Sola-Invest</span><span>Dr Kat Kesty MD</span><span>FlexBouwers (NL)</span>
+      <span>Creators</span><span>Educators</span><span>Medical practices</span><span>Investment operators</span><span>Agencies</span><span>Contractors</span><span>Fitness brands</span><span>Venture capital</span><span>E-commerce</span>
     </div>
+    <p class="lead center" style="margin-top:12px;font-size:12.5px;color:var(--faint);">Different industries. Same machine.</p>
 
     <div class="kick" style="text-align:center;margin-top:44px;">// the creator wall</div>
     <h2 class="center">the accounts behind<br><em>the systems.</em></h2>
@@ -568,17 +624,20 @@
       <!-- Live counts pulled from Instagram. Swap the initial-avatars for real profile screenshots when ready. -->
       <div class="ig"><div class="top"><span class="av"><img src="avatars/timon.jpg" alt="Timon Kriek"></span><div class="who"><div class="handle">timon.kriek <i class="vf">✓</i></div><div class="nm">Timon Kriek 🇿🇦</div></div></div>
         <div class="stats"><div><b>304</b><span>posts</span></div><div><b>1M</b><span>followers</span></div><div><b>314</b><span>following</span></div></div>
-        <div class="tagrow">Monetisation systems · business + AI strategy</div><div class="followbtn">Follow</div></div>
+        <div class="tagrow">Monetisation systems · business + AI strategy</div><div class="followbtn">Follow</div>
+      <div class="ig"><div class="top"><span class="av"><img src="avatars/amanda.jpg" alt="Amanda Ancheta"></span><div class="who"><div class="handle">amandaancheta_</div><div class="nm">Amanda Ancheta · SHE RISES</div></div></div>
+        <div class="stats"><div><b>262</b><span>posts</span></div><div><b>37K</b><span>followers</span></div><div><b>112</b><span>following</span></div></div>
+        <div class="tagrow">Monetisation systems · business strategy</div><div class="followbtn">Follow</div></div></div>
       <div class="ig"><div class="top"><span class="av"><img src="avatars/blaine.jpg" alt="Blaine Riley"></span><div class="who"><div class="handle">blainerileylifts</div><div class="nm">Blaine Riley</div></div></div>
         <div class="stats"><div><b>1,648</b><span>posts</span></div><div><b>577K</b><span>followers</span></div><div><b>1,867</b><span>following</span></div></div>
         <div class="tagrow">Monetisation systems · offer + funnel</div><div class="followbtn">Follow</div></div>
       <div class="ig"><div class="top"><span class="av"><img src="avatars/tayne.jpg" alt="Tayne De Villiers"></span><div class="who"><div class="handle">tayne_devilliers</div><div class="nm">Tayne De Villiers</div></div></div>
         <div class="stats"><div><b>189</b><span>posts</span></div><div><b>450K</b><span>followers</span></div><div><b>399</b><span>following</span></div></div>
         <div class="tagrow">Monetisation systems · brand strategy</div><div class="followbtn">Follow</div></div>
-      <div class="ig"><div class="top"><span class="av"><i>CH</i></span><div class="who"><div class="handle">chelskocoaching</div><div class="nm">Chelsko</div></div></div>
+      <div class="ig"><div class="top"><span class="av"><img src="https://unavatar.io/instagram/chelskocoaching" alt="chelskocoaching" onerror="this.parentNode.innerHTML='<i>CH</i>'"></span><div class="who"><div class="handle">chelskocoaching</div><div class="nm">Chelsko</div></div></div>
         <div class="stats"><div><b>5,093</b><span>posts</span></div><div><b>284K</b><span>followers</span></div><div><b>416</b><span>following</span></div></div>
         <div class="tagrow">Monetisation systems · business strategy</div><div class="followbtn">Follow</div></div>
-      <div class="ig"><div class="top"><span class="av"><i>JL</i></span><div class="who"><div class="handle">jackplandry</div><div class="nm">Jack Landry · Transformation Coach</div></div></div>
+      <div class="ig"><div class="top"><span class="av"><img src="https://unavatar.io/instagram/jackplandry" alt="jackplandry" onerror="this.parentNode.innerHTML='<i>JL</i>'"></span><div class="who"><div class="handle">jackplandry</div><div class="nm">Jack Landry · Transformation Coach</div></div></div>
         <div class="stats"><div><b>606</b><span>posts</span></div><div><b>82K</b><span>followers</span></div><div><b>247</b><span>following</span></div></div>
         <div class="tagrow">Monetisation systems · offer architecture</div><div class="followbtn">Follow</div></div>
       <div class="ig"><div class="top"><span class="av"><img src="avatars/simone.jpg" alt="Simone Estelle"></span><div class="who"><div class="handle">iamsimoneestelle</div><div class="nm">Simone Estelle</div></div></div>
