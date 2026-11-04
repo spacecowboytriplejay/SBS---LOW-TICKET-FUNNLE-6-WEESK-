@@ -1188,7 +1188,7 @@ _tick();setInterval(_tick,1000);
   var veil=document.getElementById('invVeil'), form=document.getElementById('invForm'), done=document.getElementById('invDone');
   var q=new URLSearchParams(location.search), KEY='mw_ft', ft=null;
   try{ft=JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){}
-  if(!ft){ft={id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()),source:q.get('utm_source')||document.referrer||'direct',landed:new Date().toISOString(),ref:q.get('ref')||''};try{localStorage.setItem(KEY,JSON.stringify(ft));}catch(e){}}
+  if(!ft){ft={id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()),source:q.get('utm_source')||document.referrer||'direct',landed:new Date().toISOString(),ref:q.get('ref')||'',mc:q.get('mcp_token')||''};try{localStorage.setItem(KEY,JSON.stringify(ft));}catch(e){}}
   function open(e){ if(e) e.preventDefault(); if(PAGE_MODE==='cart') return; veil.classList.add('on'); setTimeout(function(){var f=document.getElementById('iv-name'); f&&f.focus();},50); }
   function close(){ veil.classList.remove('on'); }
   document.addEventListener('click',function(e){ var a=e.target.closest('a[href="#invite"]'); if(a) open(e); });
@@ -1205,6 +1205,8 @@ _tick();setInterval(_tick,1000);
     d.set('route','factory'); d.set('page',location.pathname); d.set('source','merlyn-invite');
     ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){ if(q.get(k)) d.set(k,q.get(k)); });
     d.set('ft_id',ft.id); d.set('ft_source',ft.source); d.set('ft_landed_at',ft.landed); if(ft.ref) d.set('referred_by',ft.ref);
+    // ManyChat keyword DMs append a contact token: keep it so the DM and the lead join up.
+    var mc=q.get('mcp_token')||ft.mc; if(mc) d.set('manychat_token',mc);
     var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending…';
     fetch(LEAD_ENDPOINT,{method:'POST',body:d}).then(function(r){return r.json();}).catch(function(){return {ok:true};}).then(function(j){
       document.getElementById('invPos').textContent = j && j.position ? '#'+j.position : 'In';
