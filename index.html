@@ -474,6 +474,7 @@
   .way h3{font-size:19px;margin:0;} .way p{color:var(--dim);font-size:14px;line-height:1.55;margin:0;flex:1;}
   .way a{display:inline-block;margin-top:6px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none;border:1px solid var(--line2);border-radius:999px;padding:11px 16px;text-align:center;}
   .way.main a{background:linear-gradient(90deg,#8b5cf6,#8cbeff);color:#07070a;border:0;}
+  .tp-slot{margin:30px auto 0;max-width:520px;}
 </style>
 </head>
 <body>
@@ -1073,6 +1074,7 @@
       <div class="way main"><div class="k">Founding cohort · January 2027</div><h3>Merlyn Works</h3><p>Install the content factory yourself, with the protocol, the agent stack and our team on weekly calls. By invitation.</p><a href="#invite">Request an invitation →</a></div>
       <div class="way"><div class="k">Done for you · by application</div><h3>SelfBuiltSystems</h3><p>Our team architects and installs the factory inside your company, then trains the two seats that run it.</p><a href="https://www.selfbuiltsystems.com/sbs-ai?utm_source=merlynworks&amp;utm_medium=web&amp;utm_campaign=ways_in" rel="noopener">Book a strategy call →</a></div>
     </div>
+    <div class="tp-slot" id="tpSlot" hidden></div>
   </div>
 </section>
 
@@ -1147,6 +1149,7 @@ const APPLY_URL = ""; // enterprise application / booking link (form or Calendly
 const PAGE_MODE   = "waitlist";              // "waitlist" | "cart"
 const WAITLIST_URL = "#invite";               // opens the invitation modal
 const LEAD_ENDPOINT = "https://cbmbvxbrmzlfkqtqqwbp.supabase.co/functions/v1/lead";
+const TRUSTPILOT_BUID = "";                   // Trustpilot business unit ID; empty hides every widget
 const CHECKOUT_URL = "#";                     // GHL checkout, pay in full
 const SPLIT_URL    = "#";                     // GHL checkout, 2-pay
 const VSL_EMBED    = "";                       // hero VSL
@@ -1250,6 +1253,15 @@ _tick();setInterval(_tick,1000);
   var G='█▓▒░#%&@$X';
   evo.querySelectorAll('[data-scramble]').forEach(function(el){ setInterval(function(){ var t=''; for(var k=0;k<6;k++) t+=G[Math.floor(Math.random()*G.length)]; el.textContent=t; }, reduce?2000:110); });
   if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ play(); io.disconnect(); } }); io.observe(evo); } else play();
+})();
+
+/* ===== Trustpilot: renders only once TRUSTPILOT_BUID is set (real profile, real reviews) ===== */
+(function(){
+  if(!TRUSTPILOT_BUID) return;
+  var slot=document.getElementById('tpSlot'); if(!slot) return;
+  slot.hidden=false;
+  slot.innerHTML='<div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8807dec7e10d38f59f36" data-businessunit-id="'+TRUSTPILOT_BUID+'" data-style-height="150px" data-style-width="100%" data-theme="dark"><a href="https://www.trustpilot.com/review/selfbuiltsystems.com" target="_blank" rel="noopener">Trustpilot</a></div>';
+  var sc=document.createElement('script'); sc.async=true; sc.src='https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js'; document.head.appendChild(sc);
 })();
 
 /* aurora wave */
