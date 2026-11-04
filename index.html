@@ -448,6 +448,32 @@
     .evo-st{transition:none;}.evo.run .evo-rail i{transition:none;}
     .evo-st svg *{animation:none !important;}
   }
+
+  /* blended from the operator funnel: pain, ecosystem, before/after, ways in */
+  .ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:12px 0;background:#09090d;}
+  .ribbon .in{display:inline-block;animation:tk 40s linear infinite;font-family:'JetBrains Mono';font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);}
+  .ribbon .in span{margin:0 18px;} .ribbon .in b{color:var(--lav);font-weight:500;}
+  .ribbon .k{font-family:'JetBrains Mono';font-size:10px;letter-spacing:3px;color:var(--faint);text-transform:uppercase;text-align:center;margin-bottom:8px;white-space:normal;}
+  .pain{list-style:none;padding:0;margin:26px auto 0;max-width:660px;text-align:left;}
+  .pain li{border-top:1px solid var(--line);padding:14px 0;color:#cdc7c0;font-size:15.5px;line-height:1.55;}
+  .pain li b{color:#fff;}
+  .ba2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:28px 0 36px;text-align:left;}
+  .bacard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;}
+  .bacard .who{font-weight:700;font-size:16px;} .bacard .role{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:1.5px;color:var(--dim);text-transform:uppercase;margin-top:2px;}
+  .bacard .res{font-family:'Michroma';font-size:14px;color:var(--lav);margin:12px 0 14px;line-height:1.45;}
+  .bacard .row{display:grid;grid-template-columns:1fr 18px 1fr;gap:10px;align-items:start;}
+  @media(max-width:520px){.bacard .row{grid-template-columns:1fr;}.bacard .row .ar{display:none;}}
+  .bacard .lab{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;}
+  .bacard .b .lab{color:var(--faint);} .bacard .a .lab{color:var(--blue);}
+  .bacard .row p{font-size:13.5px;color:var(--dim);line-height:1.5;margin:0;} .bacard .a p{color:#cdc7c0;}
+  .bacard .ar{color:var(--faint);padding-top:16px;}
+  .ways{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:28px;text-align:left;}
+  .way{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;}
+  .way.main{border-color:rgba(190,140,255,.45);box-shadow:0 0 40px rgba(140,110,255,.12);}
+  .way .k{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:2px;color:var(--lav);text-transform:uppercase;}
+  .way h3{font-size:19px;margin:0;} .way p{color:var(--dim);font-size:14px;line-height:1.55;margin:0;flex:1;}
+  .way a{display:inline-block;margin-top:6px;font-weight:700;font-size:14px;color:var(--ink);text-decoration:none;border:1px solid var(--line2);border-radius:999px;padding:11px 16px;text-align:center;}
+  .way.main a{background:linear-gradient(90deg,#8b5cf6,#8cbeff);color:#07070a;border:0;}
 </style>
 </head>
 <body>
@@ -529,6 +555,11 @@
   </div>
 </section>
 
+<div class="ribbon" aria-label="In the room with">
+  <div class="k">// in the room with</div>
+  <div class="in"><span>HUAWEI</span><span>BYD</span><span>G20 WORKING GROUPS</span><span>WORLD ECONOMIC FORUM WORKING GROUPS</span><span><b>TIMON KRIEK · 1.4M+</b></span><span>GIIFTD ACADEMY</span><span>RYAD VC</span><span>DALTYN INVEST</span><span><b>300+ OPERATORS BUILT WITH</b></span><span>FOUR CONTINENTS</span><span>HUAWEI</span><span>BYD</span><span>G20 WORKING GROUPS</span><span>WORLD ECONOMIC FORUM WORKING GROUPS</span><span><b>TIMON KRIEK · 1.4M+</b></span><span>GIIFTD ACADEMY</span><span>RYAD VC</span><span>DALTYN INVEST</span><span><b>300+ OPERATORS BUILT WITH</b></span><span>FOUR CONTINENTS</span></div>
+</div>
+
 <div class="floor">
   <div class="lab">// the factory floor · this is what running looks like</div>
   <div class="rowline r1"><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m1"><span class="play">▶</span><span class="views">▶ 1.2M</span></div><div class="acts"><span>♥ 84.2K</span><span>💬 1,204</span><span>↗ 9,318</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m2"><span class="play">▶</span><span class="views">▶ 486K</span></div><div class="acts"><span>♥ 31.7K</span><span>💬 842</span><span>↗ 4,051</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m3"><span class="play">▶</span><span class="views">▶ 2.4M</span></div><div class="acts"><span>♥ 121K</span><span>💬 2,530</span><span>↗ 18.4K</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m4"><span class="play">▶</span><span class="views">▶ 318K</span></div><div class="acts"><span>♥ 22.1K</span><span>💬 516</span><span>↗ 2,874</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m5"><span class="play">▶</span><span class="views">▶ 893K</span></div><div class="acts"><span>♥ 54.9K</span><span>💬 1,187</span><span>↗ 7,742</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m6"><span class="play">▶</span><span class="views">▶ 1.7M</span></div><div class="acts"><span>♥ 96.3K</span><span>💬 1,914</span><span>↗ 12.6K</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m1"><span class="play">▶</span><span class="views">▶ 1.2M</span></div><div class="acts"><span>♥ 84.2K</span><span>💬 1,204</span><span>↗ 9,318</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m2"><span class="play">▶</span><span class="views">▶ 486K</span></div><div class="acts"><span>♥ 31.7K</span><span>💬 842</span><span>↗ 4,051</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m3"><span class="play">▶</span><span class="views">▶ 2.4M</span></div><div class="acts"><span>♥ 121K</span><span>💬 2,530</span><span>↗ 18.4K</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m4"><span class="play">▶</span><span class="views">▶ 318K</span></div><div class="acts"><span>♥ 22.1K</span><span>💬 516</span><span>↗ 2,874</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m5"><span class="play">▶</span><span class="views">▶ 893K</span></div><div class="acts"><span>♥ 54.9K</span><span>💬 1,187</span><span>↗ 7,742</span></div></div><div class="post"><div class="ptop"><span class="pav"></span><span class="ph2">yourbrand</span></div><div class="media m6"><span class="play">▶</span><span class="views">▶ 1.7M</span></div><div class="acts"><span>♥ 96.3K</span><span>💬 1,914</span><span>↗ 12.6K</span></div></div></div>
@@ -586,6 +617,23 @@
   </div>
 </section>
 
+<!-- SOUND FAMILIAR -->
+<section>
+  <div class="wrap narrow center">
+    <div class="kick">// sound familiar</div>
+    <h2>Every second day, the internet<br><span class="mut">sells you a new answer.</span></h2>
+    <p class="lead">Post more. Build your personal brand. Learn the art of the yap. Use AI to grow. Run more ads. It changes every week, and you have chased most of it.</p>
+    <ul class="pain">
+      <li><b>You spend serious money on marketing</b> and it still does not add up.</li>
+      <li><b>You ran influencer and affiliate campaigns.</b> They cost a fortune and you still have not picked the lock.</li>
+      <li><b>You told your team to learn AI.</b> They made some cute images and played with video generators. The return never showed up, and the token bill quietly ate your margin.</li>
+      <li><b>You have more tools, more subscriptions and more content than ever,</b> and none of it connects into anything that compounds.</li>
+      <li><b>Every dollar you spend rents attention</b> you lose the moment you stop paying. You own nothing at the end of it.</li>
+    </ul>
+    <p class="lead" style="margin-top:22px;"><b class="hl">The problem was never the tactic.</b> You keep buying pieces instead of building the system. A post is a piece. An AI tool is a piece. An ad is a piece. <b class="vio">The machine that connects them is the content factory.</b></p>
+  </div>
+</section>
+
 <!-- PROBLEM -->
 <section>
   <div class="wrap narrow center">
@@ -604,6 +652,19 @@
     <h2>This is not another<br><span class="mut">"post more" course.</span></h2>
     <p class="lead">We are not gurus selling a highlight reel. We built the systems behind a personal brand grown past 1.4 million followers, deployed AI across the full stack with global partners, and scaled 60+ businesses. We took everything that works and turned it into a protocol you run, with us next to you while you build it. The reps are yours. We make them simple.</p>
     <p class="lead vio">Nobody catches the operator who finally has a machine doing the work.</p>
+  </div>
+</section>
+
+<!-- ECOSYSTEM -->
+<section>
+  <div class="wrap center">
+    <div class="kick">// beyond the personal brand</div>
+    <h2>Personal branding is one output.<br><span class="mut">A content ecosystem is the goal.</span></h2>
+    <div class="grid" style="text-align:left;">
+      <div class="card"><div class="n">01</div><h3>An ecosystem, not a feed</h3><p>Your whole operation's content engineered to work together like episodes of the same show, so it compounds instead of depending on one person's motivation.</p></div>
+      <div class="card"><div class="n">02</div><h3>Your face is optional</h3><p>Some of it features you. Much of it does not. Faceless pages, team characters and the founder's own voice all run through the same machine.</p></div>
+      <div class="card"><div class="n">03</div><h3>Capital, reallocated</h3><p>The money that rents attention through retainers and old media is redirected into owned assets that keep working after you stop paying.</p></div>
+    </div>
   </div>
 </section>
 
@@ -697,6 +758,24 @@
   <div class="wrap">
     <div class="kick center" style="text-align:center;">// receipts</div>
     <h2 class="center">this is not <em>new.</em></h2>
+    <div class="ba2">
+      <div class="bacard">
+        <div class="who">Timon Kriek</div><div class="role">Founder &amp; creator · GIIFTD Academy</div>
+        <div class="res">1.4M+ followers · content-to-revenue engine live</div>
+        <div class="row"><div class="b"><div class="lab">Before</div><p>Posting manually. Monetisation inconsistent. Audience growing fast with no clear path to revenue.</p></div><div class="ar">→</div><div class="a"><div class="lab">After</div><p>Timon led the content. We built the business, monetisation and AI systems behind it: a content-to-revenue engine with predictable monetisation.</p></div></div>
+      </div>
+      <div class="bacard">
+        <div class="who">Anas Ben Meidoub</div><div class="role">Partner · Ryad VC</div>
+        <div class="res">2x international revenue potential in 4 months</div>
+        <div class="row"><div class="b"><div class="lab">Before</div><p>Scaling a VC-backed operation across geographies with no systematic expansion approach.</p></div><div class="ar">→</div><div class="a"><div class="lab">After</div><p>Data-driven expansion deployed. Three emerging markets identified and partnerships secured inside four months.</p></div></div>
+      </div>
+      <div class="bacard">
+        <div class="who">Dr Kat Kesty, MD</div><div class="role">St. Petersburg Skin &amp; Laser</div>
+        <div class="res">$1.2M to $3.6M in 23 months</div>
+        <div class="row"><div class="b"><div class="lab">Before</div><p>A physician-led practice with a modest following and growth tied to referrals.</p></div><div class="ar">→</div><div class="a"><div class="lab">After</div><p>Personal brand, content, VSL and practice systems installed. A second fellowship-trained doctor added, both fully booked.</p></div></div>
+      </div>
+    </div>
+
     <p class="lead center">The protocol is the packaged version of systems we have already run, at every level, for years. Every case below is the same machine, the Content Factory, with a different module doing the heavy lifting: offer, content, distribution, delivery, monetisation.</p>
     <div class="resgrid">
       <div class="res flag"><span class="cat">Medical · Aesthetics · Florida USA</span>
@@ -984,6 +1063,19 @@
 </section>
 
 <!-- LAST CALL -->
+<!-- THREE WAYS IN -->
+<section>
+  <div class="wrap center">
+    <div class="kick">// three ways in</div>
+    <h2>Pick your door.</h2>
+    <div class="ways">
+      <div class="way"><div class="k">Free · now</div><h3>The Space Cowboys</h3><p>The free community where operators build in public, share what is working and hear first when doors open.</p><a href="https://t.me/+eiV7rWbkxb44MzRk" target="_blank" rel="noopener">Join the community →</a></div>
+      <div class="way main"><div class="k">Founding cohort · January 2027</div><h3>Merlyn Works</h3><p>Install the content factory yourself, with the protocol, the agent stack and our team on weekly calls. By invitation.</p><a href="#invite">Request an invitation →</a></div>
+      <div class="way"><div class="k">Done for you · by application</div><h3>SelfBuiltSystems</h3><p>Our team architects and installs the factory inside your company, then trains the two seats that run it.</p><a href="https://www.selfbuiltsystems.com/sbs-ai?utm_source=merlynworks&amp;utm_medium=web&amp;utm_campaign=ways_in" rel="noopener">Book a strategy call →</a></div>
+    </div>
+  </div>
+</section>
+
 <section id="enterprise">
   <div class="wrap narrow" style="text-align:center;">
     <div class="kick" style="text-align:center;">// operators &amp; enterprises</div>
