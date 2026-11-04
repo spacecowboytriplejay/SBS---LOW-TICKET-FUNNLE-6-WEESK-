@@ -1,4 +1,9 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/content-factory", "destination": "/index.html" },
+    { "source": "/merlyn-works", "destination": "/index.html" },
+    { "source": "/invite", "destination": "/index.html" }
+  ]
 }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Content Factory Protocol · A 6-Week Build with SelfBuiltSystems</title>
+<title>Merlyn Works · The Content Factory · By Invitation</title>
 <meta name="description" content="Stop making posts. Build a Content Factory. A 6-week protocol to build the AI-native machine that grows your business, with SelfBuiltSystems.">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -12,7 +12,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SelfBuiltSystems">
-<meta property="og:title" content="The Content Factory Protocol · A 6-Week Build with SelfBuiltSystems">
+<meta property="og:title" content="Merlyn Works · The Content Factory · By Invitation">
 <meta property="og:description" content="Stop making posts. Build a Content Factory. A 6-week protocol to build the AI-native machine that grows your business.">
 <meta property="og:image" content="https://www.selfbuiltsystems.io/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -143,7 +143,7 @@
   .fcol.y li:before{content:"✓";position:absolute;left:2px;color:var(--green);}
   .fcol.n li:before{content:"✕";position:absolute;left:2px;color:var(--mag);}
 
-  /* ===== the human room — deliberately unpolished ===== */
+  /* ===== the human room, deliberately unpolished ===== */
   #humanroom .contact{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:30px;}
   #humanroom .snap{background:#101014;border:1px solid rgba(255,255,255,.14);padding:10px 10px 12px;max-width:280px;box-shadow:0 18px 50px rgba(0,0,0,.55);border-radius:3px;}
   #humanroom .snap:nth-child(odd){transform:rotate(-1.6deg);}
@@ -362,6 +362,34 @@
   .sticky{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(12,12,17,.92);backdrop-filter:blur(12px);border-top:1px solid rgba(140,190,255,.25);color:var(--ink);display:flex;align-items:center;justify-content:center;gap:16px;padding:12px 14px;font-size:13px;font-weight:600;transform:translateY(120%);transition:transform .35s;flex-wrap:wrap;}
   .sticky.show{transform:none;}
   .sticky a{background:#f4f4f6;color:#07070a;text-decoration:none;padding:9px 20px;font-weight:700;border-radius:6px;font-size:13px;cursor:pointer;}
+
+  /* invitation modal */
+  .inv-veil{position:fixed;inset:0;background:rgba(4,4,7,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:90;display:none;align-items:center;justify-content:center;padding:16px;}
+  .inv-veil.on{display:flex;}
+  .inv{width:100%;max-width:520px;background:var(--panel);border:1px solid var(--line2);border-radius:16px;padding:28px 24px;position:relative;box-shadow:0 0 60px rgba(140,110,255,.18);max-height:92vh;overflow:auto;}
+  .inv .k{font-family:'JetBrains Mono';font-size:11px;letter-spacing:3px;color:var(--lav);text-transform:uppercase;}
+  .inv h3{font-family:'Michroma';font-size:20px;letter-spacing:1px;margin:10px 0 6px;line-height:1.3;}
+  .inv p.s{color:var(--dim);font-size:14.5px;margin:0 0 18px;}
+  .inv label{display:block;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin:12px 0 6px;}
+  .inv input,.inv select{width:100%;background:#09090d;border:1px solid var(--line2);border-radius:10px;color:var(--ink);padding:12px 13px;font:inherit;font-size:15px;}
+  .inv input:focus,.inv select:focus{outline:none;border-color:rgba(190,140,255,.6);}
+  .inv .bad{border-color:#ff6b8a;}
+  .inv .row{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;}
+  @media(max-width:520px){.inv .row{grid-template-columns:1fr;}}
+  .inv .consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:12.5px;color:var(--dim);font-family:'Inter';letter-spacing:0;text-transform:none;}
+  .inv .consent input{width:auto;margin-top:3px;}
+  .inv button{width:100%;margin-top:18px;background:linear-gradient(90deg,#8b5cf6,#8cbeff);color:#07070a;border:0;border-radius:999px;padding:14px;font-weight:800;font-size:15px;cursor:pointer;}
+  .inv button[disabled]{opacity:.6;cursor:wait;}
+  .inv .x{position:absolute;top:12px;right:14px;background:none;border:0;color:var(--dim);font-size:22px;cursor:pointer;width:auto;margin:0;padding:4px;}
+  .inv .done{text-align:center;}
+  .inv .done .n{font-family:'Michroma';font-size:44px;color:var(--lav);margin:8px 0;text-shadow:0 0 24px rgba(190,140,255,.5);}
+  .inv .share{display:flex;gap:8px;margin-top:14px;}
+  .inv .share input{font-family:'JetBrains Mono';font-size:12px;}
+  .inv .share button{width:auto;margin:0;padding:0 16px;font-size:13px;}
+  .inv .trap{position:absolute;left:-9999px;}
+  .founding{max-width:640px;margin:22px auto 0;text-align:center;border:1px solid var(--line2);border-radius:14px;padding:22px;background:var(--card);}
+  .founding .k{font-family:'JetBrains Mono';font-size:11px;letter-spacing:3px;color:var(--lav);text-transform:uppercase;}
+  .founding p{color:var(--dim);margin:8px 0 14px;}
 </style>
 </head>
 <body>
@@ -374,7 +402,7 @@
 <section class="hero">
   <canvas id="wave"></canvas>
   <div class="wrap">
-    <div class="pre">A 6-week protocol · with <b>SelfBuiltSystems</b></div>
+    <div class="pre"><b>MERLYN WORKS</b> · the content factory · a unit of SelfBuiltSystems</div>
     <div class="cube-wrap"><canvas id="cube"></canvas><div class="cube-state" id="cubeState">PARTICLES</div></div>
     <h1>stop making posts.<br>build a <em>content factory.</em></h1>
     <p class="sub">Everyone is telling you to post more, build a personal brand, use AI, run ads. It changes every week and none of it connects. In 6 weeks we install the machine underneath it all: the AI-native content factory that grows your business whether you show up that day or not.</p>
@@ -401,7 +429,7 @@
       <a href="https://www.instagram.com/stpeteskinandlaser/" target="_blank" title="Dr Kat Kesty"><img src="avatars/katkesty.jpg" alt="Dr Kat Kesty"></a>
       <a href="https://www.stpeteskinandlaser.com/" target="_blank" title="St. Petersburg Skin and Laser"><img src="avatars/spsl.jpg" alt="SPSL"></a>
     </div>
-    <div class="facecap">founders · creators · finance · fitness · medical · media — the operators behind the machines</div>
+    <div class="facecap">founders · creators · finance · fitness · medical · media, the operators behind the machines</div>
     <div class="vsl" id="vslSlot">[ VSL EMBED SLOT ]</div>
     <a class="cta ctaMain">Build my factory →</a>
     <div class="dates" id="dates"></div>
@@ -589,7 +617,7 @@
           </div>
           <a class="browser" href="https://www.stpeteskinandlaser.com/" target="_blank" rel="noopener">
             <div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span><span class="url">stpeteskinandlaser.com</span></div>
-            <img src="proof/spsl-hero.jpg" alt="St. Petersburg Skin &amp; Laser — Dr Kat Kesty and Dr Chelsea Kesty, live site" loading="lazy">
+            <img src="proof/spsl-hero.jpg" alt="St. Petersburg Skin &amp; Laser, Dr Kat Kesty and Dr Chelsea Kesty, live site" loading="lazy">
             <div class="visit">Visit the live site ↗</div>
           </a>
         </div>
@@ -605,10 +633,10 @@
           </div>
           <div>
             <div class="figdock">
-              <div class="figframe"><div class="fbar"><span class="flogo"></span><span class="fname">timon · game changer</span></div><img src="proof/fig-gamechanger.png" alt="Game Changer — offer and delivery system design" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
-              <div class="figframe"><div class="fbar"><span class="flogo"></span><span class="fname">timon · accelerator</span></div><img src="proof/fig-accelerator.png" alt="Accelerator — offer and delivery system design" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+              <div class="figframe"><div class="fbar"><span class="flogo"></span><span class="fname">timon · game changer</span></div><img src="proof/fig-gamechanger.png" alt="Game Changer, offer and delivery system design" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+              <div class="figframe"><div class="fbar"><span class="flogo"></span><span class="fname">timon · accelerator</span></div><img src="proof/fig-accelerator.png" alt="Accelerator, offer and delivery system design" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
             </div>
-            <div class="figcap">The actual design files. Offer, funnel &amp; delivery systems — engineered by us.</div>
+            <div class="figcap">The actual design files. Offer, funnel &amp; delivery systems, engineered by us.</div>
           </div>
         </div>
       </div>
@@ -671,15 +699,15 @@
     <div class="kick" style="text-align:center;margin-top:48px;">// live output · straight off the factory floor</div>
     <h2 class="center">the factory floor, <em>live.</em></h2>
     <p class="lead center">Live output from content factories we architected with the operators on this page. Real accounts, real screenshots, numbers you can verify right now. Underneath every one sits the same machine: a system where every post, funnel, and follow-up works together, that knows when to change the content plan, how to pivot through stagnation, what to do when the algorithm shifts, and how to pull the exact buyer you want.</p>
-    <p class="lead center" style="margin-top:10px;">And look at the last one closely. A physician-only dermatology practice with a modest following, sitting next to pages doing millions of views. That is the point: views are the billboard, the system is the business. Some of our best factories are quiet ones that simply make money. Creators, coaches, an investment firm, a medical practice — different verticals, same machine.</p>
+    <p class="lead center" style="margin-top:10px;">And look at the last one closely. A physician-only dermatology practice with a modest following, sitting next to pages doing millions of views. That is the point: views are the billboard, the system is the business. Some of our best factories are quiet ones that simply make money. Creators, coaches, an investment firm, a medical practice, different verticals, same machine.</p>
     <div class="phones">
-      <a class="phone" href="https://www.instagram.com/reel/DSozzlPjEFu/" target="_blank" rel="noopener"><img src="proof/edgars-reel-1.png" alt="Viral reel — 91.2K likes, 128K shares"><div class="cap">edgars · factory output ↗</div></a>
-      <a class="phone" href="https://www.instagram.com/reel/DSozzlPjEFu/" target="_blank" rel="noopener"><img src="proof/edgars-reel-2.png" alt="Viral reel — Kazakhstan facility"><div class="cap">128K shares · one asset ↗</div></a>
+      <a class="phone" href="https://www.instagram.com/reel/DSozzlPjEFu/" target="_blank" rel="noopener"><img src="proof/edgars-reel-1.png" alt="Viral reel, 91.2K likes, 128K shares"><div class="cap">edgars · factory output ↗</div></a>
+      <a class="phone" href="https://www.instagram.com/reel/DSozzlPjEFu/" target="_blank" rel="noopener"><img src="proof/edgars-reel-2.png" alt="Viral reel, Kazakhstan facility"><div class="cap">128K shares · one asset ↗</div></a>
       <a class="phone" href="https://www.instagram.com/reel/DbYY5IDqkIb/" target="_blank" rel="noopener"><img src="proof/edgars-reel-3.png" alt="Follow-up reel"><div class="cap">edgars · the machine keeps shipping ↗</div></a>
-      <a class="phone" href="https://www.instagram.com/deyabazan/" target="_blank" rel="noopener"><img src="proof/deya-profile.jpg" alt="Deya Bazan — pinned posts at 1.4M and 1M views"><div class="cap">deyabazan · pinned 1.4M + 1M views ↗</div></a>
-      <a class="phone" href="https://www.instagram.com/blainerileylifts/" target="_blank" rel="noopener"><img src="proof/blaine-profile.jpg" alt="Blaine Riley — pinned posts at 4M and 1.1M views"><div class="cap">blainerileylifts · pinned 4M + 1.1M views ↗</div></a>
-      <a class="phone" href="https://www.instagram.com/chelskocoaching/" target="_blank" rel="noopener"><img src="proof/chelsko-profile.jpg" alt="Chelsko — pinned posts at 12.2M, 7.4M and 7M views"><div class="cap">chelskocoaching · pinned 12.2M + 7.4M + 7M ↗</div></a>
-      <a class="phone" href="https://www.instagram.com/stpeteskinandlaser/" target="_blank" rel="noopener"><img src="proof/spsl-profile.jpg" alt="St. Petersburg Skin &amp; Laser — physician-only cosmetic dermatology"><div class="cap">stpeteskinandlaser · medical practice ↗</div></a>
+      <a class="phone" href="https://www.instagram.com/deyabazan/" target="_blank" rel="noopener"><img src="proof/deya-profile.jpg" alt="Deya Bazan, pinned posts at 1.4M and 1M views"><div class="cap">deyabazan · pinned 1.4M + 1M views ↗</div></a>
+      <a class="phone" href="https://www.instagram.com/blainerileylifts/" target="_blank" rel="noopener"><img src="proof/blaine-profile.jpg" alt="Blaine Riley, pinned posts at 4M and 1.1M views"><div class="cap">blainerileylifts · pinned 4M + 1.1M views ↗</div></a>
+      <a class="phone" href="https://www.instagram.com/chelskocoaching/" target="_blank" rel="noopener"><img src="proof/chelsko-profile.jpg" alt="Chelsko, pinned posts at 12.2M, 7.4M and 7M views"><div class="cap">chelskocoaching · pinned 12.2M + 7.4M + 7M ↗</div></a>
+      <a class="phone" href="https://www.instagram.com/stpeteskinandlaser/" target="_blank" rel="noopener"><img src="proof/spsl-profile.jpg" alt="St. Petersburg Skin &amp; Laser, physician-only cosmetic dermatology"><div class="cap">stpeteskinandlaser · medical practice ↗</div></a>
     </div>
     <div class="viralstat"><!-- one Edgars asset -->
       <div><b>91.2K</b><span>likes</span></div>
@@ -740,6 +768,7 @@
     <div class="slot">[ SLOT · Add graduate before/after screenshots here after cohort 1 ]</div>
 
     <div id="price"></div>
+    <div id="pricing" hidden>
     <div class="kick center" style="text-align:center;">// the numbers</div>
     <h2 class="center">what it's <em>worth.</em></h2>
     <div class="stack">
@@ -760,6 +789,13 @@
     <div class="pricecards" id="priceCards">
       <div class="pc best"><div class="amt">$297</div><div class="lbl">pay in full</div><a class="cta ctaBuy" data-plan="full" style="margin-top:0;">Get in</a></div>
       <div class="pc"><div class="amt">$167<small>×2</small></div><div class="lbl">split pay</div><a class="cta ctaBuy" data-plan="split" style="margin-top:0;background:transparent;border:1px solid rgba(190,140,255,.5);color:var(--lav);box-shadow:none;">Split it</a></div>
+    </div>
+    </div>
+    <div class="founding" id="founding">
+      <div class="k">// founding terms</div>
+      <h2 class="center" style="margin:8px 0 0;">reserved for the <em>invitation list.</em></h2>
+      <p>Founding terms for the January cohort go to the list first, before the doors open publicly.</p>
+      <a class="cta ctaMain" style="margin-top:0;">Request an invitation →</a>
     </div>
     <div class="dates center" id="dates2" style="text-align:center;margin-top:18px;"></div>
   </div>
@@ -883,8 +919,38 @@
   RESULTS SHOWN ARE DOCUMENTED OUTCOMES AND ARE NOT TYPICAL OR GUARANTEED. BUSINESS OUTCOMES DEPEND ON EXECUTION.
 </footer>
 
+<div class="inv-veil" id="invVeil" role="dialog" aria-modal="true" aria-labelledby="invH">
+  <div class="inv">
+    <button class="x" type="button" aria-label="Close" data-inv-close>×</button>
+    <form id="invForm" novalidate>
+      <div class="k">Merlyn Works · founding cohort</div>
+      <h3 id="invH">Request an invitation</h3>
+      <p class="s">The founding cohort opens in January 2027, by invitation. The list hears first and gets founding terms before anyone else.</p>
+      <div class="row">
+        <div><label for="iv-name">Name</label><input id="iv-name" name="name" autocomplete="name" required></div>
+        <div><label for="iv-email">Email</label><input id="iv-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <label for="iv-ig">Instagram handle</label><input id="iv-ig" name="instagram" placeholder="@yourhandle" autocomplete="off">
+      <label for="iv-start">Where are you starting from?</label>
+      <select id="iv-start" name="starting_point" required><option value="" disabled selected>Select</option><option>Starting from zero</option><option>Building alone, with some traction</option><option>Running a business with a team</option></select>
+      <label for="iv-rev">Current revenue</label>
+      <select id="iv-rev" name="revenue_band" required><option value="" disabled selected>Select</option><option>Pre-revenue</option><option>Under $250k</option><option>$250k - $1M</option><option>$1M - $3M</option><option>$3M - $15M</option><option>$15M+</option></select>
+      <label class="consent"><input type="checkbox" name="consent" required> I agree that SelfBuiltSystems may store these details and contact me about Merlyn Works. Unsubscribe any time.</label>
+      <div class="trap" aria-hidden="true"><label for="iv-web">Website</label><input id="iv-web" name="website" tabindex="-1" autocomplete="off"></div>
+      <button type="submit">Request invitation →</button>
+    </form>
+    <div class="done" id="invDone" hidden>
+      <div class="k">On the list</div>
+      <div class="n" id="invPos">#</div>
+      <p class="s">You are on the Merlyn Works invitation list. Founding terms arrive by email before the cohort opens.</p>
+      <p class="s" style="margin-bottom:4px;">Share your link. Every operator who joins through it moves you up.</p>
+      <div class="share"><input id="invRef" readonly><button type="button" id="invCopy">Copy</button></div>
+    </div>
+  </div>
+</div>
+
 <div class="sticky" id="sticky">
-  <span class="sprice"><s>$1,997</s> <b>$297</b></span>
+  <span class="sprice" id="stickyPrice"><b>By invitation</b></span>
   <span id="stickyText">The Content Factory Protocol · founding cohort</span>
   <span class="stimer" id="stickyTimer">--d : --h : --m : --s</span>
   <a class="ctaMain">Build my factory →</a>
@@ -894,38 +960,78 @@
 /* ===== CONFIG ===== */
 const APPLY_URL = ""; // enterprise application / booking link (form or Calendly)
 const PAGE_MODE   = "waitlist";              // "waitlist" | "cart"
-const WAITLIST_URL = "/";                     // Atlas / GHL waitlist
+const WAITLIST_URL = "#invite";               // opens the invitation modal
+const LEAD_ENDPOINT = "https://cbmbvxbrmzlfkqtqqwbp.supabase.co/functions/v1/lead";
 const CHECKOUT_URL = "#";                     // GHL checkout, pay in full
 const SPLIT_URL    = "#";                     // GHL checkout, 2-pay
 const VSL_EMBED    = "";                       // hero VSL
-const DOORS_CLOSE  = "2026-09-16T23:59:00";
-const COHORT_START = "2026-09-21T00:00:00";
-const CART_OPEN    = "2026-09-07T09:00:00";
+const DOORS_CLOSE  = "";                      // set when the cart opens
+const COHORT_START = "";
+const CART_OPEN    = "";                      // set the January date to show a countdown
 
 if(VSL_EMBED) document.getElementById('vslSlot').innerHTML='<iframe src="'+VSL_EMBED+'" allow="autoplay; fullscreen" allowfullscreen></iframe>';
 
 const isCart = PAGE_MODE==="cart";
 const target = isCart ? new Date(DOORS_CLOSE) : new Date(CART_OPEN);
-const datesTxt = isCart ? "DOORS CLOSE SEP 16 · WE BEGIN SEP 21" : "DOORS OPEN SEP 7 · REGISTRY GETS FIRST ACCESS + FOUNDING PRICING";
+const datesTxt = isCart ? "DOORS OPEN · FOUNDING COHORT" : "BY INVITATION · FOUNDING COHORT OPENS JANUARY 2027";
 ['dates','dates2'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=datesTxt;});
 
 // ticker content
 document.getElementById('tickIn').innerHTML = (isCart
-  ? "· <b>the content factory protocol</b> · doors close sep 16 · founding rate · we begin sep 21 · #contentfactory "
-  : "· <b>something is being built</b> · the content factory protocol · registry open · first access + founding pricing · #contentfactory ").repeat(3);
+  ? "· <b>merlyn works</b> · doors open · founding cohort · #contentfactory "
+  : "· <b>something is being built</b> · merlyn works · the content factory · by invitation · january 2027 · #contentfactory ").repeat(3);
 
 // CTA wiring
-document.querySelectorAll('.ctaMain').forEach(a=>{ a.href = isCart ? "#price" : WAITLIST_URL; });
-document.querySelectorAll('.ctaBuy').forEach(a=>{ a.href = isCart ? (a.dataset.plan==='split'?SPLIT_URL:CHECKOUT_URL) : WAITLIST_URL; if(!isCart) a.textContent="Join the registry"; });
+document.querySelectorAll('.ctaMain').forEach(a=>{ a.href = isCart ? "#price" : WAITLIST_URL; if(!isCart) a.textContent = "Request an invitation →"; });
+document.querySelectorAll('.ctaBuy').forEach(a=>{ a.href = isCart ? (a.dataset.plan==='split'?SPLIT_URL:CHECKOUT_URL) : WAITLIST_URL; if(!isCart) a.textContent="Request an invitation"; });
 document.querySelector('.sticky a').href = isCart ? "#price" : WAITLIST_URL;
-document.getElementById('stickyText').textContent = isCart ? "Doors close · founding pricing ends" : "Registry open · founding pricing locked in";
+document.getElementById('stickyText').textContent = isCart ? "Doors open · founding cohort" : "Merlyn Works · founding cohort · January 2027";
+document.getElementById('pricing').hidden = !isCart;
+document.getElementById('founding').hidden = isCart;
 
 window.addEventListener('scroll',()=>{document.getElementById('sticky').classList.toggle('show',window.scrollY>900);});
 document.querySelectorAll('.ctaApply').forEach(a=>a.href=APPLY_URL||'#enterprise');
-const _tgt=new Date(isCart?DOORS_CLOSE:CART_OPEN),_pad=n=>String(Math.max(0,Math.floor(n))).padStart(2,'0');
-function _tick(){let d=Math.max(0,_tgt-Date.now());const el=document.getElementById('stickyTimer');
+const _when=isCart?DOORS_CLOSE:CART_OPEN,_tgt=new Date(_when),_pad=n=>String(Math.max(0,Math.floor(n))).padStart(2,'0');
+// No date set, or the date has passed: hide the timer rather than show zeros.
+if(!_when||_tgt<=Date.now()){const t=document.getElementById('stickyTimer');if(t)t.style.display='none';}
+function _tick(){if(!_when)return;let d=Math.max(0,_tgt-Date.now());const el=document.getElementById('stickyTimer');
 if(el)el.textContent=_pad(d/864e5)+'d : '+_pad(d/36e5%24)+'h : '+_pad(d/6e4%60)+'m : '+_pad(d/1e3%60)+'s';}
 _tick();setInterval(_tick,1000);
+
+/* ===== invitation modal → lead endpoint ===== */
+(function(){
+  var veil=document.getElementById('invVeil'), form=document.getElementById('invForm'), done=document.getElementById('invDone');
+  var q=new URLSearchParams(location.search), KEY='mw_ft', ft=null;
+  try{ft=JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){}
+  if(!ft){ft={id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random()),source:q.get('utm_source')||document.referrer||'direct',landed:new Date().toISOString(),ref:q.get('ref')||''};try{localStorage.setItem(KEY,JSON.stringify(ft));}catch(e){}}
+  function open(e){ if(e) e.preventDefault(); if(PAGE_MODE==='cart') return; veil.classList.add('on'); setTimeout(function(){var f=document.getElementById('iv-name'); f&&f.focus();},50); }
+  function close(){ veil.classList.remove('on'); }
+  document.addEventListener('click',function(e){ var a=e.target.closest('a[href="#invite"]'); if(a) open(e); });
+  veil.addEventListener('click',function(e){ if(e.target===veil||e.target.hasAttribute('data-inv-close')) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+  if(location.hash==='#invite') open();
+  form.addEventListener('input',function(e){ e.target.classList.remove('bad'); });
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var bad=[].filter.call(form.querySelectorAll('[required]'),function(el){return !el.checkValidity();});
+    bad.forEach(function(el){el.classList.add('bad');});
+    if(bad.length){bad[0].focus();return;}
+    var d=new URLSearchParams(new FormData(form));
+    d.set('route','factory'); d.set('page',location.pathname); d.set('source','merlyn-invite');
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){ if(q.get(k)) d.set(k,q.get(k)); });
+    d.set('ft_id',ft.id); d.set('ft_source',ft.source); d.set('ft_landed_at',ft.landed); if(ft.ref) d.set('referred_by',ft.ref);
+    var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sending…';
+    fetch(LEAD_ENDPOINT,{method:'POST',body:d}).then(function(r){return r.json();}).catch(function(){return {ok:true};}).then(function(j){
+      document.getElementById('invPos').textContent = j && j.position ? '#'+j.position : 'In';
+      var url=new URL(location.origin+location.pathname); url.searchParams.set('ref', (j&&j.id)||ft.id);
+      document.getElementById('invRef').value=url.toString();
+      form.hidden=true; done.hidden=false;
+      if(typeof fbq==='function') fbq('track','Lead',{content_name:'merlyn-invite'});
+      if(window.gtag) gtag('event','generate_lead',{route:'factory'});
+    });
+  });
+  document.getElementById('invCopy').addEventListener('click',function(){ var i=document.getElementById('invRef'); i.select(); try{navigator.clipboard.writeText(i.value);}catch(e){document.execCommand('copy');} this.textContent='Copied'; });
+})();
 
 /* aurora wave */
 (function(){
